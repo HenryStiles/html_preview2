@@ -1,0 +1,190 @@
+<style>
+    /* Basic styles for the map container */
+    #map_92f8581e35eacf19093091aef5a52f5 { /* Corrected ID based on your HTML */
+        position: relative;
+        width: 100.0%;
+        height: 500px; /* Set a specific height for the map container - adjust as needed */
+        left: 0.0%;
+        top: 0.0%;
+    }
+    .leaflet-container {
+        font-size: 1rem;
+    }
+
+    /* Styles for the popups - customize as needed */
+    .leaflet-popup-content {
+        width: 500px !important; /* Increased width */
+        font-size: 16px !important; /* Larger default font size */
+    }
+    .leaflet-popup-content b {
+        font-size: 18px !important; /* Larger font size for the title (bold text) */
+    }
+    .leaflet-popup-content-wrapper {
+        padding: 12px !important; /* Adjusted padding */
+    }
+    .image-citation {
+        font-size: 10px; /* Smaller font for citation */
+        text-align: right;
+        margin-top: 5px;
+        color: #555;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+<script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+</script>
+
+<div class="folium-map" id="map_92f8581e35eacf19093091aef5a52f5" ></div>
+
+<script>
+    // Wait for the DOM to be fully loaded before initializing the map
+    document.addEventListener('DOMContentLoaded', function() {
+        var map_92f88581e35eacf19093091aef5a52f5 = L.map( // Corrected ID
+            "map_92f88581e35eacf19093091aef5a52f5", // Corrected ID
+            {
+                center: [39.5501, -103.5],
+                crs: L.CRS.EPSG3857,
+                scrollWheelZoom: false, // Disabled scroll zoom
+                ...{
+                    "zoom": 7,
+                    "zoomControl": true,
+                    "preferCanvas": false,
+                }
+            }
+        );
+
+        var tile_layer_59b4be6e2cafab27a871eaa780aa7411 = L.tileLayer(
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                "minZoom": 0,
+                "maxZoom": 19,
+                "maxNativeZoom": 19,
+                "noWrap": false,
+                "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+                "subdomains": "abc",
+                "detectRetina": false,
+                "tms": false,
+                "opacity": 1,
+            }
+        );
+
+        tile_layer_59b4be6e2cafab27a871eaa780aa7411.addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+
+        // --- Markers and Popups ---
+        // Remember to update image paths below to their full URLs on your WordPress site!
+
+        // Marker 1: Bighorn
+        var marker_31377c9805c49104f32e44daf7a4795d = L.marker([38.2075, -104.5967]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_9b6af5123d0ff1618ddcbfb0e863d09f = L.popup({"maxWidth": "100%"});
+        var html_c762d1dcca1c071bc80b66822c9f872e = $(`<div id="html_c762d1dcca1c071bc80b66822c9f872e" style="width: 100.0%; height: 100.0%;"><b>Bighorn </b><br>The largest solar farm in Colorado, sits on 1,800 acres of land. It has the ability to produce 300 MW of renewable energy. Providing enough to power over 60,000 homes per year. </div>`)[0];
+        popup_9b6af5123d0ff1618ddcbfb0e863d09f.setContent(html_c762d1dcca1c071bc80b66822c9f872e);
+        marker_31377c9805c49104f32e44daf7a4795d.bindPopup(popup_9b6af5123d0ff1618ddcbfb0e863d09f);
+
+        // Marker 2: Sun Mountain
+        var marker_01eff5508fca2cb91208ece44f52e482 = L.marker([38.1803, -104.5185]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_bafc346b212c56f9f9aec90688a87187 = L.popup({"maxWidth": "100%"});
+        var html_75f9e12d4df38648e937dc53ade3dc63 = $(`<div id="html_75f9e12d4df38648e937dc53ade3dc63" style="width: 100.0%; height: 100.0%;"><b>Sun Mountain </b><br>This is one of the largest solar farms in Colorado sitting on over 3,000 acres. Sun Mountain can produce 200 MW of renewable energy. Enough to power over 50,000 homes per year.<br><img src="YOUR_IMAGE_URL/Sun%20Mountain%20.jpg" style="width:320px;"></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_bafc346b212c56f9f9aec90688a87187.setContent(html_75f9e12d4df38648e937dc53ade3dc63);
+        marker_01eff5508fca2cb91208ece44f52e482.bindPopup(popup_bafc346b212c56f9f9aec90688a87187);
+
+        // Marker 3: Pioneer
+        var marker_6b32bb7a205086645b7e62bd99c01256 = L.marker([39.7616, -104.459]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_123131e2b7b6d87c7932bb0843fbda73 = L.popup({"maxWidth": "100%"});
+        var html_31f3553f7143caf07aaec7a4d5d37043 = $(`<div id="html_31f3553f7143caf07aaec7a4d5d37043" style="width: 100.0%; height: 100.0%;"><b>Pioneer </b><br>This solar farm sits on 611 acres and produces 80 MW of renewable energy. Providing enough energy to power over 26,000 Colorado homes per year. <br><img src="YOUR_IMAGE_URL/Pioneer%20.jpg" style="width:320px;"><div class="image-citation">Airbus</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_123131e2b7b6d87c7932bb0843fbda73.setContent(html_31f3553f7143caf07aaec7a4d5d37043);
+        marker_6b32bb7a205086645b7e62bd99c01256.bindPopup(popup_123131e2b7b6d87c7932bb0843fbda73);
+
+        // Marker 4: Hunter II
+        var marker_2e7ae0f54acd0e9dbc73ae387d8fb1ad = L.marker([39.6266, -104.465]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_f3f8b289a0c9320633cf6f3e32c10fa7 = L.popup({"maxWidth": "100%"});
+        var html_eb09aa0cc0ff2a93319f523aeb75bb21 = $(`<div id="html_eb09aa0cc0ff2a93319f523aeb75bb21" style="width: 100.0%; height: 100.0%;"><b>Hunter II </b><br>This solar farm sits on 571 acres in Arapahoe County. It produces 75 MW of renewable energy. Providing enough energy to power over 15,500 Colroado homes per year. </div>`)[0];
+        popup_f3f8b289a0c9320633cf6f3e32c10fa7.setContent(html_eb09aa0cc0ff2a93319f523aeb75bb21);
+        marker_2e7ae0f54acd0e9dbc73ae387d8fb1ad.bindPopup(popup_f3f8b289a0c9320633cf6f3e32c10fa7);
+
+        // Marker 5: Pike Solar
+        var marker_2b5d2c45d6388f746e58b0946fd43a1e = L.marker([38.6217, -104.5814]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_f482f9ddf951aa6f163417781b4dad76 = L.popup({"maxWidth": "100%"});
+        var html_294bc90949b71ed530c1f86b24e2d31a = $(`<div id="html_294bc90949b71ed530c1f86b24e2d31a" style="width: 100.0%; height: 100.0%;"><b>Pike Solar </b><br>This solar farm sits on 1,310 acres and produces 175 MW of renewable energy. Providing enough to power over 46,000 Colorado homes per year.<br><img src="YOUR_IMAGE_URL/Pike%20Solar%20.jpg" style="width:320px;"><div class="image-citation">Google Landsat / Copernicus Imagery from the dates 1/1/2021</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_f482f9ddf951aa6f163417781b4dad76.setContent(html_294bc90949b71ed530c1f86b24e2d31a);
+        marker_2b5d2c45d6388f746e58b0946fd43a1e.bindPopup(popup_f482f9ddf951aa6f163417781b4dad76);
+
+        // Marker 6: Palmer
+        var marker_a0237f0e7502f3ac93598a6b8f0efe5f = L.marker([38.6299, -104.6526]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_8a9b9af9cd95b576cac5852c2a60c857 = L.popup({"maxWidth": "100%"});
+        var html_fbbed89ee95092e16ff3515a9fdbed74 = $(`<div id="html_fbbed89ee95092e16ff3515a9fdbed74" style="width: 100.0%; height: 100.0%;"><b>Palmer </b><br>The farm consists of 220,750 modules. It sits on 700 acres and produces 60 MW of renewable energy. Providing enough to power around 19,000 Colorado homes per year.<br><img src="YOUR_IMAGE_URL/Palmer%20.jpg" style="width:320px;"><div class="image-citation">Google Landsat / Copernicus Imagery from the dates 1/1/2021</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_8a9b9af9cd95b576cac5852c2a60c857.setContent(html_fbbed89ee95092e16ff3515a9fdbed74);
+        marker_a0237f0e7502f3ac93598a6b8f0efe5f.bindPopup(popup_8a9b9af9cd95b576cac5852c2a60c857);
+
+        // Marker 7: Hooper
+        var marker_39c67d69cac6f7b6d2cf491116e2578c = L.marker([37.6919, -105.9908]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_6cb8b6a450a576ea5e216445426142b4 = L.popup({"maxWidth": "100%"});
+        var html_cdc9d594dbbeb603512bbde2144c2be0 = $(`<div id="html_cdc9d594dbbeb603512bbde2144c2be0" style="width: 100.0%; height: 100.0%;"><b>Hooper </b><br>This solar farm sits on 320 acres. It produces 52 MW, enough renewable energy to power around 13,500 Coloradan homes per year.<br><img src="YOUR_IMAGE_URL/Hooper%20.jpg" style="width:320px;"><div class="image-citation">Imagery from the dates 9/9/2016–newer</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_6cb8b6a450a576ea5e216445426142b4.setContent(html_cdc9d594dbbeb603512bbde2144c2be0);
+        marker_39c67d69cac6f7b6d2cf491116e2578c.bindPopup(popup_6cb8b6a450a576ea5e216445426142b4);
+
+        // Marker 8: DIA Solar
+        var marker_9d3bdfb8b21283775379e6785183e7fd = L.marker([39.9006, -104.669]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_0e6a2b325df0a6cd4879b99eb03cc2b1 = L.popup({"maxWidth": "100%"});
+        var html_0eb19bf791fc35bdb42f51567e895c0e = $(`<div id="html_0eb19bf791fc35bdb42f51567e895c0e" style="width: 100.0%; height: 100.0%;"><b>DIA Solar</b><br>DIA has 200 acres of solar panels across the airport that generate up to 50 MW of renewable energy.</div>`)[0];
+        popup_0e6a2b325df0a6cd4879b99eb03cc2b1.setContent(html_0eb19bf791fc35bdb42f51567e895c0e);
+        marker_9d3bdfb8b21283775379e6785183e7fd.bindPopup(popup_0e6a2b325df0a6cd4879b99eb03cc2b1);
+
+        // Marker 9: San Isabel Solar
+        var marker_389bad410257cafe8ffc3fb8a5dcc8b4 = L.marker([37.371, -104.474]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_a2acb9e7d2f972018ec3151540e9f00d = L.popup({"maxWidth": "100%"});
+        var html_8111fe0885194a21d0504720907efc28 = $(`<div id="html_8111fe0885194a21d0504720907efc28" style="width: 100.0%; height: 100.0%;"><b>San Isabel Solar </b><br>This solar farm sits on 320 acres. It produces 30 MW of renewable energy for Coloradans every year. <br><img src="YOUR_IMAGE_URL/San%20Isabel%20Solar%20.jpg" style="width:320px;"><div class="image-citation">Landsat / Copernicus Imagery from the dates 1/1/2021</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_a2acb9e7d2f972018ec3151540e9f00d.setContent(html_8111fe0885194a21d0504720907efc28);
+        marker_389bad410257cafe8ffc3fb8a5dcc8b4.bindPopup(popup_a2acb9e7d2f972018ec3151540e9f00d);
+
+        // Marker 10: Spanish Peaks I Solar
+        var marker_f2b1a812ee858745d029ded077ca1a22 = L.marker([37.378, -104.475]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_5df7353507cd375531f3191c0e5754ce = L.popup({"maxWidth": "100%"});
+        var html_0342dce55d62151c7b37110958b56a63 = $(`<div id="html_0342dce55d62151c7b37110958b56a63" style="width: 100.0%; height: 100.0%;"><b>Spanish Peaks I Solar</b><br>This solar farm sits on 1,024 acres. It produces 140 MW of renewable energy. Providing enough power for around 38,000 Coloradan homes per year.<div class="image-citation">Deriva Energy </div></div>`)[0]; // <<< UPDATE IMAGE URL if image exists
+        popup_5df7353507cd375531f3191c0e5754ce.setContent(html_0342dce55d62151c7b37110958b56a63);
+        marker_f2b1a812ee858745d029ded077ca1a22.bindPopup(popup_5df7353507cd375531f3191c0e5754ce);
+
+        // Marker 11: Comanche
+        var marker_4160c6a1e1aa705f4835baf4f2e60bca = L.marker([38.2053, -104.5667]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_a91628e9311ff3b46a82a2a7746e35af = L.popup({"maxWidth": "100%"});
+        var html_ff638666cbbc7238efc905a57d97bab2 = $(`<div id="html_ff638666cbbc7238efc905a57d97bab2" style="width: 100.0%; height: 100.0%;"><b>Comanche</b><br>This solar farm sits on 900 acres and produces 120 MW of renewable energy. Providing enough to power over 31,000 Coloradan homes per year.</div>`)[0];
+        popup_a91628e9311ff3b46a82a2a7746e35af.setContent(html_ff638666cbbc7238efc905a57d97bab2);
+        marker_4160c6a1e1aa705f4835baf4f2e60bca.bindPopup(popup_a91628e9311ff3b46a82a2a7746e35af);
+
+        // Marker 12: Grazing Yak Solar
+        var marker_649c81733ca268e7072f9099f39314ea = L.marker([38.9778, -104.2527]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_11ff92d10f5d7d35880a74da69828382 = L.popup({"maxWidth": "100%"});
+        var html_9afcc753b53b5c7b644c22399ea3afee = $(`<div id="html_9afcc753b53b5c7b644c22399ea3afee" style="width: 100.0%; height: 100.0%;"><b>Grazing Yak Solar </b><br>This solar farm sits on 278 acres, consists of 119,000 modulee. It produces 35 MW of renewable energy for Coloradans, enough to power around 13,000 homes a year. <br><img src="YOUR_IMAGE_URL/Grazing%20Yak%20Solar%20.jpg" style="width:320px;"><div class="image-citation">Google Imagery from the dates 3/15/2012–7/10/2023</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_11ff92d10f5d7d35880a74da69828382.setContent(html_9afcc753b53b5c7b644c22399ea3afee);
+        marker_649c81733ca268e7072f9099f39314ea.bindPopup(popup_11ff92d10f5d7d35880a74da69828382);
+
+        // Marker 13: Neptune Energy Center Hybrid
+        var marker_2a25049f421f4e51acc8407ea6d28cfb = L.marker([38.3303, -104.4142]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_fff0610a5e3ec15be77bb16e6ee5ead3 = L.popup({"maxWidth": "100%"});
+        var html_66422794e85b2c17616713d2f5f0d0f9 = $(`<div id="html_66422794e85b2c17616713d2f5f0d0f9" style="width: 100.0%; height: 100.0%;"><b>Neptune Energy Center Hybrid</b><br>This solar farm sits on 3,840 acres, produces 250 MW of renewable energy through solar, it also has 125 MW of storage capacity. Pairing solar with storage makes the energy grid more stable and brings its renewable energy potential to 375 MW, the largest in Colorado.<br><img src="YOUR_IMAGE_URL/Neptune%20Energy%20Center%20Hybrid.jpg" style="width:320px;"><div class="image-citation">Airbus Imagery from the dates 9/22/2023–11/13/2023</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_fff0610a5e3ec15be77bb16e6ee5ead3.setContent(html_66422794e85b2c17616713d2f5f0d0f9);
+        marker_2a25049f421f4e51acc8407ea6d28cfb.bindPopup(popup_fff0610a5e3ec15be77bb16e6ee5ead3);
+
+        // Marker 14: Thunder Wolf Energy Center Hybrid
+        var marker_d3faba52e459e9958ad906d14bcf85ca = L.marker([38.1899, -104.398]).addTo(map_92f88581e35eacf19093091aef5a52f5); // Corrected ID
+        var popup_b28701b440b593778c9ebf9eca1f26c5 = L.popup({"maxWidth": "100%"});
+        var html_4903853c85de6f69e6806545ad475e16 = $(`<div id="html_4903853c85de6f69e68065454ad475e16" style="width: 100.0%; height: 100.0%;"><b>Thunder Wolf Energy Center Hybrid</b><br>This solar farm sits on 2,380 acres and produces 200 MW of renewable energy through solar. It also has 100 MW of storage capacity. Pairing solar with storage make the energy grid more stable and brings its renewable energy potential to 300 MW.<br><img src="YOUR_IMAGE_URL/Thunder%20Wolf%20Energy%20Center%20Hybrid.jpg" style="width:320px;"><div class="image-citation">Google Imagery from the dates 3/15/2012–7/10/2023</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_b28701b440b593778c9ebf9eca1f26c5.setContent(html_4903853c85de6f69e6806545ad475e16);
+        marker_d3faba52e459e9958ad906d14bcf85ca.bindPopup(popup_b28701b440b593778c9ebf9eca1f26c5);
+
+        // --- End of Markers and Popups ---
+
+    }); // End of DOMContentLoaded
+</script>
